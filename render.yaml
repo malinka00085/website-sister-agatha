@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: roblox-oauth
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"
+    envVars:
+      - key: ROBUX_OAUTH_CLIENT_ID
+        value: "your_roblox_oauth_client_id"
+      - key: ROBUX_OAUTH_CLIENT_SECRET
+        value: "your_roblox_oauth_client_secret"
+      - key: REDIRECT_URI
+        value: "http://your-deployed-app.on.render.com/auth/roblox/callback"
