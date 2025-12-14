@@ -140,6 +140,20 @@ def roblox_callback():
     except Exception as e:
         return render_html(f"Error: {str(e)}", False)
 
+@app.route('/api/save-verification', methods=['POST'])
+def save_verification():
+    """Endpoint for saving verification"""
+    data = request.get_json()
+    discord_id = str(data.get('discord_id'))
+    
+    verified_users[discord_id] = {
+        'discord_username': data.get('discord_username'),
+        'roblox_username': data.get('roblox_username'),
+        'roblox_id': data.get('roblox_id')
+    }
+    
+    return {'success': True}
+
 @app.route('/api/verified/<discord_id>')
 def check_verified(discord_id):
     if str(discord_id) in verified_users:
