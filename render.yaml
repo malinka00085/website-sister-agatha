@@ -11,4 +11,4 @@ services:
       - key: ROBUX_OAUTH_CLIENT_SECRET
         value: "RBX-7ZOWmqVYpkCKs7mHDrcBFn7mvK24kF7KYzwrZvToprwX5IPLk3uyTSgZJ7eYQeBq"
       - key: REDIRECT_URI
-        value: "http://your-deployed-app.on.render.com/auth/roblox/callback"
+        value: "https://roblox-oauth-zx1j.onrender.com/auth/roblox/callback"
